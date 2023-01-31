@@ -1,7 +1,5 @@
 package com.unit1.Q1;
-
 import java.util.Scanner;
-
 public class Main {
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
@@ -17,13 +15,12 @@ public class Main {
             int marks = sc.nextInt();
             System.out.println("                              ");
             students[i] = new Student(roll, name, marks);
-            System.out.print("=================================");
+            System.out.println("=================================");
             System.out.println("Student Details : " + (i+1) );
             System.out.println("Student Roll Number : " + roll);
             System.out.println("Student Name : " + name);
             System.out.println("Student Marks: " + marks);
             System.out.println("                          1");
-
         }
     }
 }
