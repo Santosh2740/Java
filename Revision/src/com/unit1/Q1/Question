@@ -1,0 +1,43 @@
+Create a Java Bean class Student with 3 private fields:
+a. rollNumber
+b. studentName
+c. marks
+And should have the following members also:
+a. Zero-argument constructor
+b. Parameterized overloaded constructor with all 3 fields.
+c. public getter and setter method for the above 3 fields
+2. Create the Main class with the main method and inside the main method do the
+following things:
+a. Ask the User about the number of students he wants to add. (use Scanner class to take the input).
+b. With the help of the Scanner class take the input for rollNumber,
+studentName, and marks for each student.
+c. With these inputs compose the required objects of the Student class by using the
+parameterized constructor.
+d. With the help of getter methods print all the details of the student from the
+above Student object.
+Sample output =>
+Enter Number of Students you want to enter
+2
+===========================================
+Enter the Roll Number :
+1
+Enter the Name :
+Sam
+Enter the marks :
+567
+Student Detail 01
+Student Roll Number:567.0
+Student Name:Sam
+Student Mark:567.0
+==================================
+Enter the Roll Number :
+2
+Enter the Name :
+Ram
+Enter the marks :
+669
+Student Detail 11
+Student Roll Number:669.0
+Student Name:Ram
+Student Mark:669.0
+==================================
