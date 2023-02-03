@@ -1,0 +1,25 @@
+Create a class Employee as Java Bean class with the following member variables.
+● int employeeId
+● String employeeName
+● double salary
+● double netSalary
+Write the following method in the Employee class:
+public void calculateNetSalary(int pfPercentage)
+This method should take PF percentage as argument and Deduct the PF amount from the salary and set the
+netSalary as
+netSalary=salary-pfPercentage*salary
+Create a Main class which has the main method which invokes the method to get the input and prints the
+details as shown in the sample.
+Also write this method inside Main classpublic static Employee getEmployeeDetails() - which gets the employee details - id, name, salary and
+pfPercentage from the user and returns the employee object.
+In the main method, invoke the above method and print the output as shown below.
+Sample Input 1:
+Enter Id: 101
+Enter Name: Vivek
+Enter salary: 20000
+Enter PF percentage: 7
+Sample Output
+Id : 101
+Name : Vivek
+Salary : 20000.0
+Net Salary : 18600.

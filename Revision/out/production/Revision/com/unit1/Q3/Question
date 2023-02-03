@@ -1,0 +1,62 @@
+Create a java bean class Laptop with the following membersString color;
+String companyName;
+String name;
+String purpose;
+CPU cpu;
+GraphicCard graphicCard;
+displayDetails() : void
+Here class Laptop Has-A relationship with GraphicCard and CPU.
+Create a method displayDetails() which will print all the details of the laptop.
+Create a java bean class CPU with the following fieldsString manufacturer;
+String processor;
+double clockSpeed;
+Create a java bean class GraphicCard with the following fieldsString manufacturer;
+String capacity;
+String series;
+Create a class Main with the following methodspublic static void main(String[] args)
+public static Laptop getLaptop(String laptopPurpose);
+Implement this getLaptop method in such a manner that if the user passes “gaming” then it should return
+a laptop with gaming laptop specification and if the user passes “business” then it should return laptop
+with business laptop specification else return null.
+Note: You need to take input for laptoPurpose using Scanner Class and you need to set the
+specification according to the sample Output.
+public class Main{
+public static Laptop getLaptop(String laptopPurpose){
+// implement your own logic
+}
+public static void main(String[] args) {
+// TODO Auto-generated constructor stub
+Laptop gamingLaptop=getLaptop("gaming");//You need to take input Using Scanner Class
+gamingLaptop.displayDetails();
+Laptop bussinessLaptop=getLaptop("business");//You need to take input Using Scanner Class
+bussinessLaptop.displayDetails();
+Laptop laptop=getLaptop("Entertainment");//You need to take input Using Scanner Class
+}
+}
+Sample OutputLaptop Details
+==================================================================
+Laptop Name => Acer
+Company name => Radeon
+Laptop Color => Black
+Laptop Purpose => gaming
+Cpu's Manufacturer => Radeon
+Cpu's Processor => Ryzen 9 5800H
+Cpu's ClockSpeed => 3200.0
+Graphic card's Manufacturer =>Radeon
+Graphic card's Series =>RTX 3050 Ti
+Graphic card's Capacity =>16GB
+==================================================================
+Laptop Details
+==================================================================
+Laptop Name => Aero 13
+Company name => HP
+Laptop Color => Rose Gold
+Laptop Purpose => business
+Cpu's Manufacturer => Intel
+Cpu's Processor => i5 10210U
+Cpu's ClockSpeed => 1800.0
+Graphic card's Manufacturer =>Intel
+Graphic card's Series =>Iris Xe
+Graphic card's Capacity =>Integrated
+==================================================================
+Please Enter a valid purpose
