@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Get By Id</title>
+</head>
+<body>
+    <input type="number" id="inputText">
+    <button id="myButton">Click Me</button>
+
+
+</body>
+</html>
+<script>
+    // select the input element
+const inputElement = document.querySelector('#inputText');
+
+// select the button element
+const buttonElement = document.querySelector('#myButton');
+
+// add an event listener to the button
+buttonElement.addEventListener('click', () => {
+  // get the value of the input element
+  const inputValue = inputElement.value;
+  // log the value to the console
+  console.log(inputValue);
+  fetch(`http://localhost:8089/api/getById/${inputValue}`)
+  .then(response => response.json())
+  .then(data => {
+    // Do something with the data here
+    console.log(data);
+  })
+  .catch(error => console.error(error));
+
+});
+
+    
+</script>

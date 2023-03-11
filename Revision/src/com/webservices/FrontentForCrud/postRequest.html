@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Post Request</title>
+  </head>
+  <body>
+    <!-- <form id="myForm">
+        <label for="name">Name:</label>
+        <input type="text" id="name" name="name"><br><br>
+        
+        <label for="phone">Phone:</label>
+        <input type="text" id="phone" name="phone"><br><br>
+        
+        <label for="email">Email:</label>
+        <input type="text" id="email" name="email"><br><br>
+        
+        <label for="address">Address:</label>
+        <input type="text" id="address" name="address"><br><br>
+        
+        <input type="button" value="Submit" onclick="submitForm()">
+      </form> -->
+    <div id="ADD_item">
+      <input type="text" id="image" placeholder="Name" /> <br /><br />
+      <input type="text" id="title" placeholder="Phone" /><br /><br />
+      <input type="text" id="price" placeholder="Email" /><br /><br />
+      <input type="text" id="rating" placeholder="Address" /><br /><br />
+      <button onclick="addItem()">S U B I T</button>
+    </div>
+  </body>
+</html>
+<script>
+  //     function submitForm() {
+  //   const form = document.getElementById("myForm");
+  //   const formData = new FormData(form);
+  // //   console.log(formData);
+
+  //   fetch("http://localhost:8089/api/add", {
+  //     method: "POST",
+  //     body: formData
+  //   })
+  //   .then(response => response.json())
+  //   .then(data => console.log(data))
+  //   .catch(error => console.error(error));
+  // }
+
+  async function addItem() {
+    let image = document.getElementById("image").value;
+    let title = document.getElementById("title").value;
+    let price = document.getElementById("price").value;
+    let rating = document.getElementById("rating").value;
+
+    let data = { image, title, price, rating };
+
+    console.log(data);
+
+    var myHeaders = new Headers();
+    myHeaders.append("Authorization", "Basic YWthc2hAZ21haWwuY29tOjEyMzQ=");
+    myHeaders.append("Content-Type", "application/json");
+
+    var raw = JSON.stringify({
+      name: image,
+      phone: title,
+      email: price,
+      address: rating,
+    });
+
+    var requestOptions = {
+      method: "POST",
+      headers: myHeaders,
+      body: raw,
+      redirect: "follow",
+    };
+
+    fetch("http://localhost:8089/api/add", requestOptions)
+      .then((response) => response.text())
+      .then((result) => console.log(result))
+      .catch((error) => console.log("error", error));
+
+    alert("SucessFull !!!");
+    document.getElementById("image").value = "";
+    document.getElementById("title").value = "";
+    document.getElementById("price").value = "";
+    document.getElementById("rating").value = "";
+  }
+</script>

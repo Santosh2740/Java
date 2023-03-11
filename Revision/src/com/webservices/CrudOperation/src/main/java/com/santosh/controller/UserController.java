@@ -10,7 +10,7 @@ import org.springframework.web.bind.annotation.*;
 
 import com.santosh.service.UserService;
 
-@CrossOrigin("http://localhost:3000")
+
 @RestController
 @RequestMapping("/api")
 public class UserController {
@@ -20,7 +20,6 @@ public class UserController {
 
     //add user
     @PostMapping("/add")
-    @CrossOrigin("http://localhost:8089/api/add")
     public ResponseEntity<User> addUser(@RequestBody User user) {
 
         User f1 = f.addUser(user);
